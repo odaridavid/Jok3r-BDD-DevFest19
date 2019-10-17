@@ -1,4 +1,4 @@
-package org.kotlin.preacher.jok3r.data
+package org.kotlin.preacher.jok3r.data.models
 
 
 /**
