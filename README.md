@@ -12,11 +12,11 @@ It consumes from a [Jokes API](https://rapidapi.com/Sv443/api/jokeapi) from [Rap
  API Key.
  To Access the global ```gradle.properties``` ,Locate the `.gradle` file in the following directory
     
-    - <b>Windows</b>: C:\Users\<Your Username>\.gradle
+    - <b>Windows</b>: C:\Users\\\<Your Username>\\\.gradle
 
-    - <b>Mac:</b> /Users/<Your Username>/.gradle   
+    - <b>Mac:</b> /Users<Your Username>/.gradle   
      
-    - <b>Linux:</b> /home/<Your Username>/.gradle 
+    - <b>Linux:</b> /home<Your Username>/.gradle 
  
     If it doesn't exist create one and add in your API key like so
  
