@@ -37,10 +37,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.2.1"
+    testImplementation "com.google.truth:truth:1.0"
 
     //DI
     implementation "org.koin:koin-android:2.0.1"
     implementation "org.koin:koin-androidx-viewmodel:2.0.1"
+
 
     //Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
@@ -51,4 +54,8 @@ dependencies {
 
     //Material Design
     implementation "com.google.android.material:material:1.1.0-beta01"
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
 }
