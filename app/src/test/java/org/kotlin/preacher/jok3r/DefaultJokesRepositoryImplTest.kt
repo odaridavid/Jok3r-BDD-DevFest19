@@ -74,7 +74,7 @@ class DefaultJokesRepositoryImplTest {
     @Test(expected = IllegalStateException::class)
     fun getJoke_throwExceptionOnInvalidArguments() {
         runBlockingTest {
-            //Will Throw an exception due to mismatching categories,tests the else branch on getJoke()
+            //Will Throw an exception due to mismatching categories
             jokesRepositoryWithTwoPartJoke.getJoke(Category.MISC)
         }
     }
