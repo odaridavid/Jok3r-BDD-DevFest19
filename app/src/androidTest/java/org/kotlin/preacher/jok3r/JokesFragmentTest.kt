@@ -52,6 +52,7 @@ class JokesFragmentTest : AutoCloseKoinTest() {
 
         onView(withId(R.id.get_joke_button)).perform(click())
 
+        //TODO Test Refactor
         onView(withId(R.id.joke_text_view)).check(matches(withText("There are only 10 kinds of people in this world: those who know binary and those who don't")))
     }
 

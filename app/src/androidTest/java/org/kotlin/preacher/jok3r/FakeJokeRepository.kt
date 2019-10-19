@@ -15,14 +15,14 @@ class FakeJokeRepository : JokesRepository {
 
     private val jokes = mutableListOf(
         SingleJoke(
-            Category.PROGRAMMING,
+            Category.PROGRAMMING.name,
             1,
-            JokeType.SINGLE,
+            JokeType.SINGLE.name,
             "There are only 10 kinds of people in this world: those who know binary and those who don't"
         )
     )
 
-    override suspend fun getJoke(category: Category): Result<Joke> {
+    override suspend fun getJoke(category: String): Result<Joke> {
         return Success(jokes[0])
     }
 

@@ -13,15 +13,15 @@ import org.kotlin.preacher.jok3r.data.source.DefaultJokesRepositoryImpl
 class DefaultJokesRepositoryImplTest {
 
     private val singleJokeData: Joke = SingleJoke(
-        Category.PROGRAMMING,
+        Category.PROGRAMMING.name,
         1,
-        JokeType.SINGLE,
+        JokeType.SINGLE.name,
         "There are only 10 kinds of people in this world: those who know binary and those who don't"
     )
     private val twoPartJokeData: Joke = TwoPartJoke(
-        Category.PROGRAMMING,
+        Category.PROGRAMMING.name,
         2,
-        JokeType.TWO_PART,
+        JokeType.TWO_PART.name,
         "What do you call a group of 8 Hobbits?",
         "A Hobbyte"
     )
@@ -47,7 +47,7 @@ class DefaultJokesRepositoryImplTest {
         runBlockingTest {
             val nullJokeSource = FakeJokeDataSource()
             val jokesRepo = DefaultJokesRepositoryImpl(nullJokeSource)
-            assertThat(jokesRepo.getJoke(Category.PROGRAMMING) is Error).isTrue()
+            assertThat(jokesRepo.getJoke(Category.PROGRAMMING.name) is Error).isTrue()
         }
     }
 
@@ -55,7 +55,7 @@ class DefaultJokesRepositoryImplTest {
     @Test
     fun getJoke_jokeLoadedIsSingleJoke() {
         runBlockingTest {
-            val singleJoke = jokesRepositoryWithSingleJoke.getJoke(Category.PROGRAMMING) as Success
+            val singleJoke = jokesRepositoryWithSingleJoke.getJoke(Category.PROGRAMMING.name) as Success
             assertThat(singleJoke.data).isEqualTo(singleJokeData)
         }
     }
@@ -65,7 +65,7 @@ class DefaultJokesRepositoryImplTest {
     fun getJoke_jokeLoadedIsTwoPartJoke() {
         runBlockingTest {
             val twoPartJoke =
-                jokesRepositoryWithTwoPartJoke.getJoke(Category.PROGRAMMING) as Success
+                jokesRepositoryWithTwoPartJoke.getJoke(Category.PROGRAMMING.name) as Success
             assertThat(twoPartJoke.data).isEqualTo(twoPartJokeData)
         }
     }
@@ -75,7 +75,7 @@ class DefaultJokesRepositoryImplTest {
     fun getJoke_throwExceptionOnInvalidArguments() {
         runBlockingTest {
             //Will Throw an exception due to mismatching categories
-            jokesRepositoryWithTwoPartJoke.getJoke(Category.MISC)
+            jokesRepositoryWithTwoPartJoke.getJoke(Category.MISC.name)
         }
     }
 
