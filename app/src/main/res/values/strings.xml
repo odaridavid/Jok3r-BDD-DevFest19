@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Jok3r</string>
+    <string name="label_get_a_joke">Get A Joke</string>
+    <string name="info_no_joke_loaded">No Joke To Display</string>
+    <string name="title_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_internet_connection">Check Internet Connection</string>
 </resources>
