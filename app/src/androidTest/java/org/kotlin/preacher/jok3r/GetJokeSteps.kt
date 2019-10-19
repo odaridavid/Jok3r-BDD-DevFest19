@@ -17,8 +17,8 @@ class GetJokeSteps {
         onView(withId(R.id.get_joke_button)).perform(click())
     }
 
-    @Then("^I should not see no joke to display text")
-    fun I_should_not_see_auth_error()
+    @Then("^I should not see error text")
+    fun I_should_not_see_error_text()
     {
         onView(withId(R.id.joke_text_view)).check(matches(not(withText(R.string.info_no_joke_loaded))))
     }
