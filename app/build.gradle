@@ -14,6 +14,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testApplicationId "org.kotlin.preacher.jok3r.test"
+        testInstrumentationRunner "org.kotlin.preacher.jok3r.test.CustomInstrumentationRunner"
         buildConfigField("String", "JOKES_KEY", "\"${project.hasProperty("JOK3R_API_KEY") ? JOK3R_API_KEY : System.getenv("JOK3R_API_KEY")}\"")
     }
     buildTypes {
@@ -28,6 +30,11 @@ android {
     }
     kotlinOptions{
         jvmTarget ="1.8"
+    }
+    sourceSets {
+        androidTest {
+            assets.srcDirs = ['src/androidTest/assets']
+        }
     }
 }
 
@@ -51,6 +58,10 @@ dependencies {
     debugImplementation 'org.koin:koin-test:2.0.1'
     androidTestImplementation("io.mockk:mockk-android:1.9.3") { exclude module: 'objenesis' }
     androidTestImplementation 'org.objenesis:objenesis:2.6'
+
+    //Cucumber Bdd
+    androidTestImplementation 'info.cukes:cucumber-android:1.2.5@jar'
+    androidTestImplementation 'info.cukes:cucumber-picocontainer:1.2.4'
 
     //DI
     implementation "org.koin:koin-android:2.0.1"
