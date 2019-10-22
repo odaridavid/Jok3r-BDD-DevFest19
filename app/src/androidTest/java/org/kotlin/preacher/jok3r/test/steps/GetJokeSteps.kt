@@ -1,4 +1,4 @@
-package org.kotlin.preacher.jok3r.test
+package org.kotlin.preacher.jok3r.test.steps
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.navigation.NavController

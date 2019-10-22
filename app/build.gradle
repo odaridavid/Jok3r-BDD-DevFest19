@@ -15,7 +15,7 @@ android {
         versionName "1.0"
         testApplicationId "org.kotlin.preacher.jok3r.test"
 //        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner "org.kotlin.preacher.jok3r.test.JokerCucumberRunner"
+        testInstrumentationRunner "org.kotlin.preacher.jok3r.test.runner.CucumberRunner"
         buildConfigField("String", "JOKES_KEY", "\"${project.hasProperty("JOK3R_API_KEY") ? JOK3R_API_KEY : System.getenv("JOK3R_API_KEY")}\"")
     }
     buildTypes {
